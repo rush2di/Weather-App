@@ -1,0 +1,198 @@
+$primColor: #0072bb;
+$secColor: #ff7e28;
+$primLight: #eaebed80;
+$secLight: #0b3954;
+$text: #2a2a2a;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  min-width: 100vw;
+  padding: 1.5rem;
+  background-color: #eaebedd0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  form {
+    display: flex;
+    align-items: inherit;
+    label {
+      margin: 0 0.5rem;
+      color: #5e5e5e;
+    }
+    input {
+      border: none;
+      padding: 0.5rem;
+      border-bottom-left-radius: 1rem;
+      border-top-left-radius: 1rem;
+      transition: all 0.4s ease-in-out;
+      outline: none;
+    }
+    input::placeholder {
+      color: rgb(182, 182, 182);
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: $secColor;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      transition: 0.2s ease-out;
+    }
+    button:hover {
+      background-color: #ef6c00;
+    }
+  }
+}
+
+.container {
+  background-image: url("/assets/shower-rain.jpg");
+  transition: background-image 1s ease-out;
+  background-size: cover;
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// body:after {
+//   display: none;
+//   content: url("url(assets/clouds.jpg)") url("url(assets/clear-sky.jpg)")
+//     url("url(assets/rain.jpg)") url("url(assets/thunderstorm.jpg)")
+//     url("url(assets/snow.jpg)") url("url(assets/mist.jpg)"); // load images
+// }
+
+.enter {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.change {
+  animation: scale-down-up-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card {
+  margin-top: 5rem;
+  height: 30rem;
+  width: 20rem;
+  background-color: $primLight;
+  border-radius: 0.3rem;
+  transition: 0.5s ease-out;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  .card-wrapper {
+    margin: -3rem 0 0 0;
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon {
+      height: 70px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100px;
+    }
+    #discription {
+      color: #fff;
+    }
+  }
+  .country-info {
+    margin: 0.5rem 1rem;
+    display: inherit;
+    flex-direction: column;
+    .cuid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      h3 {
+        font-size: 26px;
+        color: $text;
+      }
+      span {
+        margin: 0.1rem 0.5rem;
+      }
+    }
+    .grid-container {
+      display: grid;
+      width: inherit;
+      grid-gap: 1rem;
+      grid-auto-flow: column;
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text;
+      }
+      .txt {
+        color: #4c636d;
+        font-weight: 800;
+      }
+    }
+    .extra {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin: 1em 0;
+      .temp {
+        font-size: 26px;
+        color: #fff;
+        font-weight: 800;
+        margin: 0 0 0.5em 0;
+      }
+      .wind {
+        div {
+          padding: 0.3rem;
+          font-size: 20px;
+          color: #2a2a2a;
+          font-weight: 600;
+          span {
+            color: #4c636d;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-down-up-center {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
