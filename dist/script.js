@@ -13,7 +13,7 @@ const data = async country => {
       `http://api.openweathermap.org/data/2.5/weather?q=${country}&&appid=${apiKey}`
     );
     let res = await api_call.json();
-    console.log(res);
+//  console.log(res);
     return res;
   } catch (err) {
     console.error(err.message);
