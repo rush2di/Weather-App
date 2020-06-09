@@ -6,6 +6,6 @@ Get current weather informations by city name
 ### To try it out locally
 1. clone this repo 
 2. open your command line 
-3. npm install to init all dependencies
+3. npm install to install all dependencies
 4. type gulp watch to start the local server
 5. visit localhost:8000 
